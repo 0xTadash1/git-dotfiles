@@ -1,0 +1,4 @@
+[core]
+    user.name = %%USER_NAME%%
+    user.email = %%USER_EMAIL%%
+    editor = nvim

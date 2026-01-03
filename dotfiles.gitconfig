@@ -1,0 +1,8 @@
+[dotfiles]
+    deployCmd = cp -Lp -vf
+    fetchCmd = 'f(){ bw get item "$1" | jq -r --arg n "$2" ".fields[]|select(.name==\$n).value"; }; f'
+
+[dotfiles "job.gitconfig"]
+    path = Job/job.gitconfig
+    placeholder-USER_NAME = Projects/Job/.gitconfig user_name
+    placeholder-USER_EMAIL = Projects/Job/.gitconfig user_email
