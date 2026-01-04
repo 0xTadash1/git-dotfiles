@@ -1,8 +1,14 @@
+
+[filter "dotfiles-filter"]
+    clean = cat
+    smudge = ./dotfiles-filter smudge %f
+    required = true
+
 [dotfiles]
     deployCmd = cp -Lp -vf
-    fetchCmd = 'f(){ bw get item "$1" | jq -r --arg n "$2" ".fields[]|select(.name==\$n).value"; }; f'
+    fetchCmd = 'f(){ bw get item "$1" | jq -r --arg n "$2" ".fields[]|select(.name==\\$n).value"; }; f'
 
 [dotfiles "job.gitconfig"]
     path = Job/job.gitconfig
-    placeholder-USER_NAME = Projects/Job/.gitconfig user_name
-    placeholder-USER_EMAIL = Projects/Job/.gitconfig user_email
+    keyOfUSERNAME = 'Projects/Job/.gitconfig user_name'
+    keyOfUSEREMAIL = 'Projects/Job/.gitconfig user_email'
