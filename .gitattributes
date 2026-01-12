@@ -1,1 +1,4 @@
-job.gitconfig filter=dotfiles-filter
+job.gitconfig filter=dotfiles-filter dotfiles=darwin
+# To include the .ssh directory itself, explicitly specify it as a standalone entry
+.ssh chmod=600
+.ssh/** chmod=600
